@@ -1,0 +1,411 @@
+:root {
+    --gold: #d4af37;
+    --gold-light: #f3e5ab;
+    --gold-dark: #b8860b;
+    --dark-bg: #0a1510; /* Fallback for marble */
+    --text-light: #fdfbf7;
+    
+    --font-cursive: 'Pinyon Script', cursive;
+    --font-body: 'Raleway', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-bg);
+    background-image: linear-gradient(rgba(10, 21, 16, 0.8), rgba(10, 21, 16, 0.8)), url('marble-bg.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--text-light);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.cursive-title {
+    font-family: var(--font-cursive);
+    font-size: 3.5rem;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 2rem;
+}
+
+/* Animations */
+.fade-in, .section-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.fade-in.visible, .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.bismillah {
+    margin-bottom: 40px;
+}
+
+.bismillah-svg {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.bismillah p {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.names-container {
+    margin: 40px 0;
+}
+
+.names {
+    font-family: var(--font-cursive);
+    font-size: 5.5rem;
+    color: var(--gold);
+    line-height: 1;
+    font-weight: 400;
+}
+
+.and {
+    font-family: var(--font-cursive);
+    font-size: 3rem;
+    color: var(--text-light);
+    display: block;
+    margin: -10px 0;
+}
+
+.location-tag {
+    margin-top: 60px;
+    border-top: 1px solid rgba(212, 175, 55, 0.5);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+    padding: 10px 30px;
+}
+
+.location-tag p {
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+}
+
+/* Gold Details Box */
+.details-section {
+    padding: 60px 20px;
+}
+
+.gold-box {
+    background-color: var(--gold);
+    color: #111;
+    padding: 60px 40px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Inner border effect */
+.gold-box::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid rgba(0,0,0,0.2);
+    pointer-events: none;
+}
+
+.gold-box h2 {
+    font-family: var(--font-cursive);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.gold-box .date-large {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.gold-box .divider-line {
+    width: 60px;
+    height: 1px;
+    background-color: #111;
+    margin: 20px auto;
+}
+
+.gold-box .time, .gold-box .location-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    letter-spacing: 1px;
+}
+
+/* Calendar Section */
+.calendar {
+    border: 1px solid var(--gold);
+    padding: 30px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.month {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 10px;
+}
+
+.days-header, .days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.days-header span {
+    color: var(--gold-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.days-grid span {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.days-grid .highlight {
+    background-color: var(--gold);
+    color: #000;
+    border-radius: 50%;
+    position: relative;
+    font-weight: 600;
+}
+
+.heart-icon {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: #ff4d4d;
+    font-size: 14px;
+    font-style: normal;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 500px;
+    margin: 40px auto 0;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: rgba(212, 175, 55, 0.3);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    background-color: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+    z-index: 2;
+}
+
+.timeline-content {
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 20px;
+    border-radius: 4px;
+    width: 80%;
+    text-align: center;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 20px;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: 20px;
+}
+
+.timeline-content h3 {
+    color: var(--gold);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.timeline-content p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* QR Code Section */
+.qr-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.qr-border {
+    padding: 20px;
+    border: 2px solid var(--gold);
+    background: white; /* Needs white background for QR contrast */
+    border-radius: 4px;
+}
+
+.btn-gold-outline {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.btn-gold-outline:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+/* RSVP Form */
+.rsvp-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rsvp-form input, .rsvp-form select {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+    padding: 15px 0;
+    color: var(--text-light);
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.rsvp-form input:focus, .rsvp-form select:focus {
+    outline: none;
+    border-bottom-color: var(--gold);
+}
+
+.rsvp-form select option {
+    background: var(--dark-bg);
+    color: var(--gold);
+}
+
+.btn-gold-solid {
+    background: var(--gold);
+    color: #000;
+    border: none;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn-gold-solid:hover {
+    background: var(--gold-light);
+}
+
+.hidden { display: none; }
+.success-msg { color: var(--gold); margin-top: 20px; font-size: 1.1rem; }
+
+/* Footer */
+.footer {
+    padding: 60px 20px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    background: rgba(0,0,0,0.8);
+}
+
+.footer .cursive-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .names { font-size: 4rem; }
+    .gold-box { padding: 40px 20px; }
+    
+    .timeline::before { left: 20px; }
+    .timeline-item { justify-content: flex-start; padding-left: 50px; padding-right: 0; }
+    .timeline-item:nth-child(even) { padding-left: 50px; }
+    .timeline-dot { left: 20px; }
+    .timeline-content { width: 100%; margin: 0 !important; }
+}

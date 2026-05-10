@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biniyam & Sumeya | Wedding Invitation</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero fade-in">
+        <div class="bismillah">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100'><text x='50%' y='60%' text-anchor='middle' font-size='40' font-family='Arial' fill='%23d4af37'>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</text></svg>" alt="Bismillah" class="bismillah-svg">
+            <p>In the name of Allah, the Most Gracious, the Most Merciful</p>
+        </div>
+        
+        <div class="names-container">
+            <h1 class="names">Biniyam</h1>
+            <span class="and">&</span>
+            <h1 class="names">Sumeya</h1>
+        </div>
+        
+        <div class="location-tag">
+            <p>ADDIS ABABA</p>
+        </div>
+    </section>
+
+    <!-- Ceremony Details Box -->
+    <section class="details-section section-reveal">
+        <div class="gold-box">
+            <h2>The Wedding Ceremony</h2>
+            <p class="date-large">SUNDAY, JUNE 28, 2026</p>
+            <div class="divider-line"></div>
+            <p class="time">Starting at 10:00 AM</p>
+            <p class="location-text">Next to Polytechnic College<br>Saris, Addis Ababa</p>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section section-reveal">
+        <h2 class="section-title cursive-title">Save the Date</h2>
+        
+        <div class="calendar">
+            <div class="month">JUNE 2026</div>
+            <div class="days-header">
+                <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+            </div>
+            <div class="days-grid">
+                <!-- Empty slots for May -->
+                <span></span><span></span><span></span><span></span><span></span>
+                <!-- June dates -->
+                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+                <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+                <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+                <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
+                <span class="highlight">28<i class="heart-icon">♥</i></span><span>29</span><span>30</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Timeline -->
+    <section class="timeline-section section-reveal">
+        <h2 class="section-title cursive-title">Our Schedule</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>10:00 AM</h3>
+                    <p>Guest Arrival & Welcome</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>11:00 AM</h3>
+                    <p>Nikah Ceremony</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>01:00 PM</h3>
+                    <p>Wedding Feast (Walima)</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>03:00 PM</h3>
+                    <p>Photos & Celebration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR Code & Map -->
+    <section class="map-section section-reveal">
+        <h2 class="section-title cursive-title">Direction</h2>
+        <p class="subtitle">Scan to view the location on Google Maps</p>
+        
+        <div class="qr-wrapper">
+            <div class="qr-border">
+                <div id="qrcode"></div>
+            </div>
+        </div>
+        
+        <a href="https://maps.app.goo.gl/search/Polytechnic+College+Saris+Addis+Ababa" target="_blank" class="btn-gold-outline">Open Map</a>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="rsvp-section section-reveal">
+        <h2 class="section-title cursive-title">RSVP</h2>
+        <p class="subtitle">Kindly respond by June 15th, 2026</p>
+        
+        <form id="rsvp-form" class="rsvp-form">
+            <input type="text" placeholder="Your Full Name" required>
+            <select required>
+                <option value="" disabled selected>Will you attend?</option>
+                <option value="yes">Joyfully Accept</option>
+                <option value="no">Regretfully Decline</option>
+            </select>
+            <input type="number" placeholder="Number of Guests" min="1" max="5" value="1" required>
+            <button type="submit" class="btn-gold-solid">Send RSVP</button>
+        </form>
+        <div id="rsvp-success" class="hidden success-msg">Thank you for your response!</div>
+    </section>
+
+    <footer class="footer">
+        <h2 class="cursive-title">Biniyam & Sumeya</h2>
+        <p>We look forward to celebrating with you.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
